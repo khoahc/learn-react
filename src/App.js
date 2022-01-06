@@ -1,29 +1,15 @@
 import "./styles.css";
-
-const date = new Date();
-let currentHour = date.getHours();
-let greeting;
-const customStyle = {
-  color: ""
-};
-
-if (currentHour < 12) {
-  greeting = "Good morning";
-  customStyle.color = "red";
-} else if (currentHour < 18) {
-  greeting = "Good afternoon";
-  customStyle.color = "green";
-} else {
-  greeting = "Good night";
-  customStyle.color = "blue";
-}
+import { add, multiply, subtract, divide } from "./calculator";
 
 export default function App() {
   return (
     <div>
-      <h1 className="heading" style={customStyle}>
-        {greeting}
-      </h1>
+      <ul>
+        <li>{add(1, 2)}</li>
+        <li>{multiply(3, 2)}</li>
+        <li>{subtract(3, 2)}</li>
+        <li>{divide(6, 4)}</li>
+      </ul>
     </div>
   );
 }
